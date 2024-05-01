@@ -197,7 +197,6 @@ class CashCardApplicationTests {
                 .exchange("/cashcards/99", HttpMethod.DELETE, null, Void.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
 
-        // Add the following code:
         ResponseEntity<String> getResponse = restTemplate
                 .withBasicAuth("sarah1", "abc123")
                 .getForEntity("/cashcards/99", String.class);
